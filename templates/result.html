@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Resume Score -->
+    <div class="card">
+
+        <h2>📊 Resume Score</h2>
+
+        <div class="score">
+            {{ score }}%
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar"
+                 style="width: {{ score }}%;">
+            </div>
+        </div>
+
+        <br>
+
+        {% if score >= 80 %}
+            <h3 style="color:#3fb950;">
+                🟢 ATS Status : Excellent
+            </h3>
+
+        {% elif score >= 60 %}
+            <h3 style="color:orange;">
+                🟡 ATS Status : Good
+            </h3>
+
+        {% else %}
+            <h3 style="color:red;">
+                🔴 ATS Status : Needs Improvement
+            </h3>
+
+        {% endif %}
+
+    </div>
+
+    <!-- Skills Found -->
+    <div class="card">
+
+        <h2>✅ Skills Found</h2>
+
+        <div class="skills">
+
+            {% for skill in found_skills %}
+
+                <span class="badge">
+                    {{ skill }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <!-- Missing Skills -->
+    <div class="card">
+
+        <h2>❌ Missing Skills</h2>
+
+        <div class="skills">
+
+            {% for skill in missing_skills %}
+
+                <span class="badge">
+                    {{ skill }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+        <!-- AI Suggestions -->
+    <div class="card">
+
+        <h2>💡 AI Suggestions</h2>
+
+        <ul>
+
+            {% for item in suggestions %}
+
+                <li>{{ item }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+
+    <!-- Extracted Resume -->
+    <div class="card">
+
+        <h2>📄 Extracted Resume</h2>
+
+        <div class="resume-text">
+
+            <div class="resume-row">
+                <span>Name</span>
+                <span>:</span>
+                <span>{{ name }}</span>
+            </div>
+
+            <div class="resume-row">
+                <span>Email</span>
+                <span>:</span>
+                <span>{{ email }}</span>
+            </div>
+
+            <div class="resume-row">
+                <span>Phone Number</span>
+                <span>:</span>
+                <span>{{ phone }}</span>
+            </div>
+
+            <div class="resume-row">
+                <span>Education</span>
+                <span>:</span>
+                <span>{{ education }}</span>
+            </div>
+
+            <div class="resume-row">
+                <span>Skills</span>
+                <span>:</span>
+                <span>{{ skills }}</span>
+            </div>
+
+            <div class="resume-row">
+                <span>Projects</span>
+                <span>:</span>
+                <span>{{ projects }}</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

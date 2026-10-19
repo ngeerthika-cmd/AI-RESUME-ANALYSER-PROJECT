@@ -1,0 +1,184 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0d1117;
+    color:#ffffff;
+}
+
+/* ---------- HOME PAGE ---------- */
+
+.home-container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.home-card{
+    width:500px;
+    background:#161b22;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(0,0,0,.5);
+}
+
+.home-card h1{
+    color:#58a6ff;
+    font-size:38px;
+    margin-bottom:40px;
+}
+
+.upload-box{
+    display:block;
+    width:100%;
+    padding:18px;
+    border:2px dashed #58a6ff;
+    border-radius:12px;
+    cursor:pointer;
+    margin-bottom:30px;
+    transition:.3s;
+}
+
+.upload-box:hover{
+    background:#21262d;
+}
+
+.upload-box span{
+    font-size:20px;
+    color:white;
+}
+
+.upload-box input{
+    display:none;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    background:#238636;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#2ea043;
+}
+
+/* ---------- RESULT PAGE ---------- */
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:30px auto;
+}
+
+.card{
+    width:100%;
+    background:#161b22;
+    padding:30px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+.card h2{
+    color:#58a6ff;
+    margin-bottom:20px;
+}
+
+.score{
+    text-align:center;
+    font-size:60px;
+    color:#3fb950;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.progress{
+    width:100%;
+    height:25px;
+    background:#30363d;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    background:#238636;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.badge{
+    background:#1f6feb;
+    color:white;
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:16px;
+}
+
+.resume-row{
+    display:grid;
+    grid-template-columns:220px 30px auto;
+    padding:14px 0;
+    border-bottom:2px dotted #555;
+    font-size:18px;
+}
+
+.resume-row span:first-child{
+    color:#58a6ff;
+    font-weight:bold;
+}
+
+.resume-text{
+    margin-top:15px;
+}
+ul{
+    margin-left:25px;
+    line-height:35px;
+    font-size:18px;
+}
+
+li{
+    color:white;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    transition:0.3s;
+}
+
+.progress-bar{
+    transition:width 1.5s ease;
+}
+
+.resume-row:hover{
+    background:#21262d;
+    transition:0.3s;
+    padding-left:10px;
+}
+
+.score{
+    text-shadow:0px 0px 20px #3fb950;
+}
+
+.badge:hover{
+    background:#58a6ff;
+    transform:scale(1.05);
+    transition:0.3s;
+}
